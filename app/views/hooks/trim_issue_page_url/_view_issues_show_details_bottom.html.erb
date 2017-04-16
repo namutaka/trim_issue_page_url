@@ -1,0 +1,11 @@
+<script>
+(function() {
+  if ( !!location ) {
+    // 指定のhook的にはこの判定は不要なはずだが念のため
+    if ( /^\/issues\/\d+$/.test(location.pathname) && location.search !== '') {
+      history.replaceState(null, null, location.pathname + location.hash);
+    }
+  }
+})();
+</script>
+
